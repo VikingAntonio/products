@@ -137,18 +137,18 @@ The app supports three types of printer connection:<br><br>
   contact: `
 <h2>Contacto</h2>
 <div class="video-row">
-  <video controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+  <video controls src="#"></video>
   <div class="video-text">
-    <h4>Video 1: Introducción</h4>
-    <p>En este video conocerás los conceptos básicos para iniciar.</p>
+    <h4>STEP 1:</h4>
+    <p>STEP 1:</p>
   </div>
 </div>
 
 <div class="video-row">
-  <video controls src="https://www.w3schools.com/html/movie.mp4"></video>
+  <video controls src="#"></video>
   <div class="video-text">
-    <h4>Video 2: Configuración avanzada</h4>
-    <p>Aprende a configurar tu entorno de desarrollo paso a paso.</p>
+    <h4>STEP 2:</h4>
+    <p>STEP 2:</p>
   </div>
 </div>
 `
