@@ -494,6 +494,12 @@ model-viewer {
     width: 44%;
     height: 220px;
   }
+  #cuadros h2 {
+  font-zise: 20px;
+}
+  #cuadros p {
+  font-size:12px;
+}
 }
 
 /*Contenido dinamico styles*/
