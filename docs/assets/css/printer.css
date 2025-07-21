@@ -464,7 +464,7 @@ model-viewer {
 #cuadros {
   margin: auto;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   margin: 5px;
   margin: auto;
   margin-top: 20px;
@@ -495,7 +495,7 @@ model-viewer {
     height: 220px;
   }
   #cuadros h2 {
-  font-zise: 20px;
+  font-zise: 18px;
 }
   #cuadros p {
   font-size:12px;
