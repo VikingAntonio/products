@@ -137,7 +137,7 @@ The app supports three types of printer connection:<br><br>
   contact: `
 <h2>Contacto</h2>
 <div class="video-row">
-  <video controls src="#"></video>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=z1g7Ku3L8TKCT0E7&amp;list=PL44JDaXj6Q_-QFowbHHohRtniKzd4tEVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <div class="video-text">
     <h4>STEP 1:</h4>
     <p>STEP 1:</p>
@@ -245,4 +245,5 @@ buttons.forEach(btn => {
 
 // Carga inicial
 setActiveSection('tutorial');
+
 
