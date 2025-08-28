@@ -1,10 +1,23 @@
-// Opcional: detener animación al pasar el mouse
-const track = document.querySelector(".slider-track");
-
-track.addEventListener("mouseenter", () => {
-  track.style.animationPlayState = "paused";
+// Popup
+document.querySelectorAll('.mockup-slider .item').forEach(item => {
+  item.addEventListener('click', () => {
+    const url = item.getAttribute('data-url');
+    if (url) {
+      document.getElementById('popupFrame').src = url;
+      document.getElementById('popup').classList.add('active');
+    }
+  });
 });
 
-track.addEventListener("mouseleave", () => {
-  track.style.animationPlayState = "running";
+document.getElementById('popupClose').addEventListener('click', () => {
+  document.getElementById('popup').classList.remove('active');
+  document.getElementById('popupFrame').src = "";
 });
+
+document.getElementById('popup').addEventListener('click', e => {
+  if (e.target.id === 'popup') {
+    document.getElementById('popup').classList.remove('active');
+    document.getElementById('popupFrame').src = "";
+  }
+});
+
