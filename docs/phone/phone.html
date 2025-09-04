@@ -12,6 +12,23 @@
 </head>
 
 <body>
+<script>
+  // Bloquear clic derecho silenciosamente
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Bloquear combinaciones de teclas para inspeccionar
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === 'F12') e.preventDefault();
+    // Ctrl + Shift + I / C / J
+    if (e.ctrlKey && e.shiftKey && ['i','c','j'].includes(e.key.toLowerCase())) e.preventDefault();
+    // Ctrl + U (Ver código fuente)
+    if (e.ctrlKey && e.key.toLowerCase() === 'u') e.preventDefault();
+  });
+</script>
+    
     <div id="modelo3d">
     <model-viewer
         id="reveal" 
@@ -21,7 +38,6 @@
         shadow-intensity="5" 
         camera-controls
          auto-rotate
-        ar
         ar-scale="fixed"
         alt="app3D"
         exposure="1"
@@ -30,7 +46,7 @@
     </model-viewer>
         <div class="dbanner">
             <h1>All-In-One Restaurant APP</h1>
-            <p>The best from our restaurant, right at your fingertips.</p><a class="btn" role="button" href="./index.html#textform">Enjoy 10% off</a>
+            <p>The best from our restaurant, right at your fingertips.</p><a class="btn" role="button" href="https://menutech.biz/phone/phone.html#textform">Enjoy 10% off</a>
         </div>
     </div>
      <div id="cuadros" class="cuadros">
