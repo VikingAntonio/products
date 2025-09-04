@@ -3,7 +3,7 @@
 
 .mockup-slider .banner {
   max-width: 800px;
-  margin: 0px auto 40px auto; /* ↑ Levantamos un poco en PC */
+  margin: 60px auto 40px auto; /* ↑ Levantamos un poco en PC */
   position: relative;
   overflow: hidden;
   height: 480px; /* un poco más alto en PC */
@@ -78,8 +78,6 @@
       rotateX(8deg) translateZ(260px) scale(1.12);
   }
 }
-
-
 
 /* Móviles */
 @media (max-width: 576px) {
