@@ -12,6 +12,23 @@
 </head>
 
 <body>
+    <script>
+  // Bloquear clic derecho silenciosamente
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Bloquear combinaciones de teclas para inspeccionar
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === 'F12') e.preventDefault();
+    // Ctrl + Shift + I / C / J
+    if (e.ctrlKey && e.shiftKey && ['i','c','j'].includes(e.key.toLowerCase())) e.preventDefault();
+    // Ctrl + U (Ver código fuente)
+    if (e.ctrlKey && e.key.toLowerCase() === 'u') e.preventDefault();
+  });
+</script>
+
 <script>
   const hamburger = document.getElementById('hamburger');
   const navCenter = document.getElementById('nav-center');
