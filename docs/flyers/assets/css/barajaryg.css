@@ -18,6 +18,26 @@ body{
   width: 340px;
   height: 500px;
 }
+.swipercol {
+  position: relative;
+  width: 240px;
+  height: 400px;
+}
+.swipersticker {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.swipersflyer {
+  position: relative;
+  width: 240px;
+  height: 350px;
+}
+.swiperscard {
+  position: relative;
+  width: 280px;
+  height: 200px;
+}
 
 .swiper-slide {
   border-radius: 5px;
