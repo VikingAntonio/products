@@ -42,17 +42,6 @@
     environment-image="neutral"
     style="height: 500px;"
 >
-  <button class="Hotspot" slot="hotspot-2" data-url="https://lacarretarest.com/" data-position="-0.0021253226290978977m 0.9692369719581672m 0.18556008992427794m" data-normal="3.531238928428486e-8m 0.450950844035523m 0.8925487864893707m" data-visibility-attribute="visible">
-    <span>Customer Display</span>
-  </button>
-
-  <button class="Hotspot" slot="hotspot-3" data-url="https://example.com/page2.html" data-position="-0.009013557435242413m 1.096759910678752m -0.02051498446590519m" data-normal="-5.667599882554879e-7m 0.39808768186515187m -0.9173473701640553m" data-visibility-attribute="visible">
-    <span>POS Workstation</span>
-  </button>
-
-  <button class="Hotspot" slot="hotspot-4" data-url="https://example.com/page3.html" data-position="-0.015263890305544519m 0.793459942896966m -0.10259646976605163m" data-normal="-8.434967718168559e-8m -7.390444099268391e-7m -0.9999999999997233m" data-visibility-attribute="visible">
-    <span>Cash Drawer</span>
-  </button>
 </model-viewer>
 
 <!-- Popup con iframe -->
@@ -103,6 +92,37 @@ Ticket printing is used to provide the customer with a receipt for their order a
 It helps organize bills and coins in separate compartments.<br/><br/>
 It opens automatically during a transaction and can be locked for added security..</p></div>
     </div>
+
+
+     <div class="pos3d"> <model-viewer
+    id="reveal" 
+    loading="eager"
+    poster="./pos.png"
+    src="https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf"  
+    shadow-intensity="5" 
+    camera-controls
+    ar-scale="fixed"
+    alt="element3D"
+    exposure="1"
+    environment-image="neutral"
+    style="height: 500px;"
+>
+  <button class="Hotspot" slot="hotspot-2" data-url="https://lacarretarest.com/" data-position="0.40770454585983007m 0.9672930089115683m 0.04329223379725977m" data-normal="0.015678994483568142m 0.4509506844288455m -0.8924111436692955m" data-visibility-attribute="visible">
+    <span>Customer Display</span>
+  </button>
+
+  <button class="Hotspot" slot="hotspot-3" data-url="https://example.com/page2.html" data-position="0.4197952344028965m 1.0909816645323422m 0.2531016430319083m" data-normal="-0.01611408667222998m 0.398087852078337m 0.9172057556722897m" data-visibility-attribute="visible">
+    <span>POS Workstation</span>
+  </button>
+
+  <button class="Hotspot" slot="hotspot-4" data-url="https://example.com/page3.html" data-position="0.4144973131186613m 0.7980432610523819m 0.33259491428051985m" data-normal="-0.01756649422048951m -5.29739133255446e-7m 0.999845697235589m" data-visibility-attribute="visible">
+    <span>Cash Drawer</span>
+  </button>
+  <button class="Hotspot" slot="hotspot-5" data-url="https://example.com/page3.html" data-position="-0.0018118659789206348m 0.9783368921525447m 0.2278786500073488m" data-normal="-0.017333282584667743m -0.14420561883568098m 0.9893959252043939m" data-visibility-attribute="visible">
+        <span>Printer</span>
+  </button>
+</model-viewer></div>
+    
     <div id="formulario" class="formulario">
         <div id="miform">
             <form data-bss-recipient="0769ed07de9623dd212a615bc33516e5">
