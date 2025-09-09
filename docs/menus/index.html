@@ -176,34 +176,32 @@ Vibrant colors and high resolution to make dish images attractive.</p></div>
     <script src="./assets/js/untitled.js"></script>
     <script src="./assets/js/zswiper.js"></script>
     <script>
-  <!-- PÉGALO EN EL <head> INMEDIATAMENTE DESPUÉS DEL META VIEWPORT -->
 <script>
-(function () {
-  // Detecta 1366x768 de forma robusta (considerando escalado del SO)
-  var dpr = window.devicePixelRatio || 1;
-  var physW = Math.round(screen.width * dpr);
-  var physH = Math.round(screen.height * dpr);
-  var is1366x768 = Math.abs(physW - 1366) <= 8 && Math.abs(physH - 768) <= 8;
+function escalarFlipbook() {
+  const flipbook = document.querySelector(".flipbook");
+  if (!flipbook) return;
 
-  if (is1366x768) {
-    // Ajusta el "initial-scale" del viewport, NO usa transform ni toca tu CSS
-    var m = document.querySelector('meta[name="viewport"]');
-    if (m) {
-      var content = m.getAttribute('content') || 'width=device-width, shrink-to-fit=no';
-      // Quita cualquier initial-scale existente y agrega 0.75
-      content = content
-        .replace(/initial-scale\s*=\s*[^,]+,?/gi, '')
-        .replace(/,\s*,/g, ',')
-        .replace(/,\s*$/,'');
-      m.setAttribute('content', (content ? content + ', ' : '') + 'initial-scale=0.75');
-    } else {
-      var meta = document.createElement('meta');
-      meta.name = 'viewport';
-      meta.content = 'width=device-width, initial-scale=0.75, shrink-to-fit=no';
-      document.head.appendChild(meta);
-    }
-  }
-})();
+  // Ancho máximo deseado del flipbook en píxeles
+  const baseWidth = 922;
+  const baseHeight = 700;
+
+  // Ancho de la ventana
+  const screenW = window.innerWidth;
+  const screenH = window.innerHeight;
+
+  // Calcula factor de escala (ejemplo: quepa en el 90% de la pantalla)
+  let scale = Math.min(screenW * 0.9 / baseWidth, screenH * 0.9 / baseHeight);
+
+  // Nunca lo hagas más grande que 1 (100%)
+  if (scale > 1) scale = 1;
+
+  // Aplica el scale al contenedor
+  flipbook.style.transform = `scale(${scale})`;
+  flipbook.style.transformOrigin = "top center";
+}
+
+window.addEventListener("load", escalarFlipbook);
+window.addEventListener("resize", escalarFlipbook);
 </script>
 
 
