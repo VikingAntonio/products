@@ -110,20 +110,26 @@
   }
 }
 @media (max-width: 1366px){
-   .popup-content {
-    width: 90%;       /* ocupar todo el ancho */
-    height: 95%;      /* ocupar toda la altura */
-    margin: 2px;       /* margen pequeño para no pegarse a los bordes */
-    max-width: none;   /* ignorar el max-width */
+  .popup-content {
+    width: 90%;       
+    height: 95%;      
+    margin: 2px;       
+    max-width: none;   
     border-radius: 5px; 
+    overflow: hidden; /* evita que el iframe se salga */
+    position: relative; /* necesario para el iframe absoluto */
   }
+
   .popup-content iframe {
-      width: 90%;
-  max-width: 800px;
-  height: 85%;
-  margin-top: 10px; /* ajusta este valor a lo que necesites */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 }
+
 
 
 
