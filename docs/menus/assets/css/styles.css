@@ -97,17 +97,10 @@ model-viewer {
     padding: 10px;
   }
 }
-@media (max-width: 1366px) {
-    #modelo3d .flipbook-viewport {
-    width: 80%;
-  }
-    .dbanner {
-  width: 60%;
-}
-}
+
 @media (max-width: 1366px) {
   .dbanner h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 .izq {
