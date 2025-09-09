@@ -175,6 +175,22 @@ Vibrant colors and high resolution to make dish images attractive.</p></div>
     <script src="./assets/js/scroll.js"></script>
     <script src="./assets/js/untitled.js"></script>
     <script src="./assets/js/zswiper.js"></script>
+    <script>
+  function ajustarZoom() {
+    const ancho = window.innerWidth;
+    const alto = window.innerHeight;
+
+    if (ancho === 1366 && alto === 768) {
+      document.body.style.zoom = "0.75"; // Escala al 75%
+    } else {
+      document.body.style.zoom = "1"; // 100% para otras resoluciones
+    }
+  }
+
+  window.addEventListener('load', ajustarZoom);
+  window.addEventListener('resize', ajustarZoom);
+</script>
+
 
 </body>
 
