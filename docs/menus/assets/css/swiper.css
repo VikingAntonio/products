@@ -113,22 +113,23 @@
   .popup-content {
     width: 90%;       
     height: 95%;      
-    margin: 2px;       
+    margin: 2px auto;      
     max-width: none;   
     border-radius: 5px; 
-    overflow: hidden; /* evita que el iframe se salga */
-    position: relative; /* necesario para el iframe absoluto */
+    overflow: hidden;
+    position: relative;
   }
 
   .popup-content iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: block;
+    width: 100%;        
+    height: 100%;      
     border: none;
+    margin: 0 auto;    
   }
 }
+
+
 
 
 
