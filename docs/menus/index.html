@@ -175,33 +175,7 @@ Vibrant colors and high resolution to make dish images attractive.</p></div>
     <script src="./assets/js/scroll.js"></script>
     <script src="./assets/js/untitled.js"></script>
     <script src="./assets/js/zswiper.js"></script>
-<script>
-function escalarFlipbook() {
-  const flipbook = document.querySelector(".flipbook");
-  if (!flipbook) return;
 
-  // Ancho máximo deseado del flipbook en píxeles
-  const baseWidth = 922;
-  const baseHeight = 700;
-
-  // Ancho de la ventana
-  const screenW = window.innerWidth;
-  const screenH = window.innerHeight;
-
-  // Calcula factor de escala (ejemplo: quepa en el 90% de la pantalla)
-  let scale = Math.min(screenW * 0.9 / baseWidth, screenH * 0.9 / baseHeight);
-
-  // Nunca lo hagas más grande que 1 (100%)
-  if (scale > 1) scale = 1;
-
-  // Aplica el scale al contenedor
-  flipbook.style.transform = `scale(${scale})`;
-  flipbook.style.transformOrigin = "top center";
-}
-
-window.addEventListener("load", escalarFlipbook);
-window.addEventListener("resize", escalarFlipbook);
-</script>
 
 
 
