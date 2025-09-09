@@ -176,20 +176,36 @@ Vibrant colors and high resolution to make dish images attractive.</p></div>
     <script src="./assets/js/untitled.js"></script>
     <script src="./assets/js/zswiper.js"></script>
     <script>
-  function ajustarZoom() {
-    const ancho = window.innerWidth;
-    const alto = window.innerHeight;
+  <!-- PÉGALO EN EL <head> INMEDIATAMENTE DESPUÉS DEL META VIEWPORT -->
+<script>
+(function () {
+  // Detecta 1366x768 de forma robusta (considerando escalado del SO)
+  var dpr = window.devicePixelRatio || 1;
+  var physW = Math.round(screen.width * dpr);
+  var physH = Math.round(screen.height * dpr);
+  var is1366x768 = Math.abs(physW - 1366) <= 8 && Math.abs(physH - 768) <= 8;
 
-    if (ancho === 1366 && alto === 768) {
-      document.body.style.zoom = "0.75"; // Escala al 75%
+  if (is1366x768) {
+    // Ajusta el "initial-scale" del viewport, NO usa transform ni toca tu CSS
+    var m = document.querySelector('meta[name="viewport"]');
+    if (m) {
+      var content = m.getAttribute('content') || 'width=device-width, shrink-to-fit=no';
+      // Quita cualquier initial-scale existente y agrega 0.75
+      content = content
+        .replace(/initial-scale\s*=\s*[^,]+,?/gi, '')
+        .replace(/,\s*,/g, ',')
+        .replace(/,\s*$/,'');
+      m.setAttribute('content', (content ? content + ', ' : '') + 'initial-scale=0.75');
     } else {
-      document.body.style.zoom = "1"; // 100% para otras resoluciones
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, initial-scale=0.75, shrink-to-fit=no';
+      document.head.appendChild(meta);
     }
   }
-
-  window.addEventListener('load', ajustarZoom);
-  window.addEventListener('resize', ajustarZoom);
+})();
 </script>
+
 
 
 </body>
