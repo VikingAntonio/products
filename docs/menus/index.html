@@ -177,6 +177,34 @@ Vibrant colors and high resolution to make dish images attractive.</p></div>
     <script src="./assets/js/scroll.js"></script>
     <script src="./assets/js/untitled.js"></script>
     <script src="./assets/js/zswiper.js"></script>
+    <script>
+  function resizeFlipbook() {
+    var $viewport = $(".flipbook-viewport");
+    var viewportWidth = $viewport.width();
+
+    // Calcula ancho y alto proporcional
+    var bookWidth = viewportWidth; 
+    var bookHeight = Math.round(bookWidth * 0.75); // 4:3, ajusta según tu diseño
+
+    $(".flipbook").turn("size", bookWidth, bookHeight);
+  }
+
+  // Inicializa
+  $(".flipbook").turn({
+    autoCenter: true,
+    width: 800,  // valores base
+    height: 600
+  });
+
+  // Llamar al cargar
+  resizeFlipbook();
+
+  // Llamar al redimensionar
+  $(window).on("resize", function() {
+    resizeFlipbook();
+  });
+</script>
+
 </body>
 
 </html>
