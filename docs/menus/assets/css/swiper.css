@@ -109,5 +109,13 @@
   margin-top: 30px; /* ajusta este valor a lo que necesites */
   }
 }
+@media (max-width: 1366px){
+  .popup-content iframe {
+      width: 90%;
+  max-width: 800px;
+  height: 80%;
+  margin-top: 10px; /* ajusta este valor a lo que necesites */
+  }
+}
 
 
