@@ -110,6 +110,13 @@
   }
 }
 @media (max-width: 1366px){
+   .popup-content {
+    width: 90%;       /* ocupar todo el ancho */
+    height: 95%;      /* ocupar toda la altura */
+    margin: 2px;       /* margen pequeño para no pegarse a los bordes */
+    max-width: none;   /* ignorar el max-width */
+    border-radius: 5px; 
+  }
   .popup-content iframe {
       width: 90%;
   max-width: 800px;
@@ -117,5 +124,6 @@
   margin-top: 10px; /* ajusta este valor a lo que necesites */
   }
 }
+
 
 
