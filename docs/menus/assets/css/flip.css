@@ -62,21 +62,6 @@
   }
 }
 
-/* Monitor HD (Full HD 1920px) */
-@media (min-width: 1401px) and (max-width: 1920px) {
-  .flipbook-viewport .flipbook {
-    width: 1200px;
-    height: 900px;
-  }
-}
-
-/* Monitores grandes (2K y 4K) */
-@media (min-width: 1921px) {
-  .flipbook-viewport .flipbook {
-    width: 1600px;
-    height: 1200px;
-  }
-}
 /* Acer Aspire V (pantallas 1280px - 1366px de ancho) */
 @media (min-width: 1280px) and (max-width: 1366px) {
   .flipbook-viewport .flipbook {
