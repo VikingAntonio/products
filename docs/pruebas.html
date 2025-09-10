@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid 3x3 Responsive</title>
+  <link rel="stylesheet" href="./products.css" />
+</head>
+<body>
+    <h1>View 3D</h1> 
+<script src="https://unpkg.com/@egjs/view3d@latest/dist/view3d.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@egjs/view3d@latest/css/view3d-bundle.min.css">
+
+<style>
+  /* Loader estilo barra */
+  .v3d-loader {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .v3d-loader-progress {
+    height: 100%;
+    width: 0%;
+    background: #2196f3;
+    transition: width 0.2s;
+  }
+
+  /* Hotspots estilo círculo */
+  .hotspot-btn {
+    background: red;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+</style>
+
+<div id="view3d" style="width:100%;height:500px;position:relative;">
+  <canvas class="view3d-canvas"></canvas>
+  <div class="v3d-loader"><div class="v3d-loader-progress"></div></div>
+</div>
+
+<script>
+  const view3D = new View3D("#view3d", { 
+    src: "https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf"
+  });
+
+  // 📌 Loader Plugin
+  view3D.on("loadStart", () => {
+    document.querySelector(".v3d-loader-progress").style.width = "0%";
+  });
+  view3D.on("progress", e => {
+    document.querySelector(".v3d-loader-progress").style.width = (e.loaded * 100) + "%";
+  });
+  view3D.on("load", () => {
+    document.querySelector(".v3d-loader").style.display = "none";
+  });
+
+  // 📌 Hotspots
+  const hotspot = new View3D.HotspotPlugin(view3D);
+  view3D.addPlugin(hotspot);
+
+  hotspot.add({
+    position: [0.40770454585983007, 0.9672930089115683, 0.04329223379725977],
+    element: `<button class="hotspot-btn" onclick="window.open('https://lacarretarest.com/','_blank')" title="Customer Display"></button>`
+  });
+
+  hotspot.add({
+    position: [0.4197952344028965, 1.0909816645323422, 0.2531016430319083],
+    element: `<button class="hotspot-btn" onclick="window.open('https://example.com/page2.html','_blank')" title="POS Workstation"></button>`
+  });
+
+  hotspot.add({
+    position: [0.4144973131186613, 0.7980432610523819, 0.33259491428051985],
+    element: `<button class="hotspot-btn" onclick="window.open('https://example.com/page3.html','_blank')" title="Cash Drawer"></button>`
+  });
+
+  hotspot.add({
+    position: [-0.0018118659789206348, 0.9783368921525447, 0.2278786500073488],
+    element: `<button class="hotspot-btn" onclick="window.open('https://example.com/page3.html','_blank')" title="Printer"></button>`
+  });
+</script>
+
+
+
+   <!-- <h1>View 3D</h1>
+<script src="https://unpkg.com/@egjs/view3d@latest/dist/view3d.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@egjs/view3d@latest/css/view3d-bundle.min.css">
+<div id="view3d"><canvas class="view3d-canvas"></canvas></div>
+<script>
+  const view3D = new View3D("#view3d", { src: "https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf" });
+</script>
+</div>-->
+<!--<h1>View 3D</h1> 
+<script src="https://unpkg.com/@egjs/view3d@latest/dist/view3d.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@egjs/view3d@latest/css/view3d-bundle.min.css">
+
+<div id="view3d"><canvas class="view3d-canvas"></canvas></div>
+
+<script>
+  const view3D = new View3D("#view3d", { 
+    src: "https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf"
+  });
+
+  // Auto-rotación
+  const autoRotate = new View3D.AutoPlayPlugin({ playOnInit: true });
+  view3D.addPlugin(autoRotate);
+
+  // Zoom / control de cámara
+  const controls = new View3D.CameraControlPlugin({
+    enableZoom: true,
+    enablePan: true,
+    minDistance: 1,
+    maxDistance: 10
+  });
+  view3D.addPlugin(controls);
+
+  // Hotspot
+  const hotspot = new View3D.HotspotPlugin(view3D);
+view3D.addPlugin(hotspot);
+
+// Hotspot 2 - Customer Display
+hotspot.add({
+  position: [0.40770454585983007, 0.9672930089115683, 0.04329223379725977],
+  element: `<button onclick="window.open('https://lacarretarest.com/','_blank')" 
+    style="background:red; color:white; padding:5px; border-radius:5px;">Customer Display</button>`
+});
+
+// Hotspot 3 - POS Workstation
+hotspot.add({
+  position: [0.4197952344028965, 1.0909816645323422, 0.2531016430319083],
+  element: `<button onclick="window.open('https://example.com/page2.html','_blank')" 
+    style="background:blue; color:white; padding:5px; border-radius:5px;">POS Workstation</button>`
+});
+
+// Hotspot 4 - Cash Drawer
+hotspot.add({
+  position: [0.4144973131186613, 0.7980432610523819, 0.33259491428051985],
+  element: `<button onclick="window.open('https://example.com/page3.html','_blank')" 
+    style="background:green; color:white; padding:5px; border-radius:5px;">Cash Drawer</button>`
+});
+
+// Hotspot 5 - Printer
+hotspot.add({
+  position: [-0.0018118659789206348, 0.9783368921525447, 0.2278786500073488],
+  element: `<button onclick="window.open('https://example.com/page3.html','_blank')" 
+    style="background:purple; color:white; padding:5px; border-radius:5px;">Printer</button>`
+});
+
+
+  // Eventos de carga
+  view3D.on("loadStart", () => console.log("Cargando..."));
+  view3D.on("load", () => console.log("Modelo listo"));
+</script>-->
+
+
+<!--<h1>TinyGLB + model viewer y Babylon.js</h1>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer src="https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf" alt="Descripción" auto-rotate camera-controls></model-viewer>-->
+
+
+<!--<h1>Sample model 3D</h1>
+<script src="https://unpkg.com/three@latest/build/three.min.js"></script>
+<script src="https://unpkg.com/lil-gui@latest/dist/lil-gui.min.js"></script>
+<script src="https://unpkg.com/simple-model-viewer@1.0.1/dist/browser/model-viewer.browser.umd.js"></script>
+<script>
+  const viewer = new ModelViewer({
+    containerId: "mi-visor",
+    modelsDirectory: "/models/",
+    models: ["https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf"],
+    showGui: true
+  });
+</script>-->
+
+<!--<h1>AVGP gltf viewer</h1>
+<link rel="import" href="https://avgp.github.io/gltf-viewer/gltf-viewer.html">
+<gltf-viewer interactive src="https://vikingantonio.github.io/bddCards/assets/pos/pos.gltf"></gltf-viewer>-->
+
+</body>
+</html>
